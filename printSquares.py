@@ -1,4 +1,4 @@
-from itertools import takewhile
+from itertools import islice
 
 ''' Python 3.x '''
 
@@ -8,14 +8,7 @@ def print_all(collection):
 
 
 def take(count, collection):
-    i = 0
-
-    def should_take(x):
-        nonlocal i
-        i += 1
-        return i <= count
-
-    return takewhile(should_take, collection)
+    return islice(collection, 0, count)
 
 
 def squares_of(collection):
