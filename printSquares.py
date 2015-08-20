@@ -1,4 +1,4 @@
-from itertools import islice
+from itertools import islice, count
 
 ''' Python 3.x '''
 
@@ -18,10 +18,7 @@ def squares_of(collection):
 class Integers:
     @staticmethod
     def all():
-        i = 0
-        while True:
-            i += 1
-            yield i
+        return count(start=1, step=1)
 
 
 print_all(take(5, squares_of(Integers.all())))
